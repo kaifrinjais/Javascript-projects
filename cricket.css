@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#134f62,#b7e4c7);
+    min-height: 100vh;
+    text-align: center;
+    padding-top: 40px;
+}
+
+h1{
+    color: #1b4332;
+    font-size: 45px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+button{
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.08);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+.bat,
+.ball,
+.stump{
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+}
+
+h3{
+    margin-top: 18px;
+    color: #1d3557;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#result{
+    color: #e63946;
+    font-size: 30px;
+}
+
+#score{
+    margin-top: 25px;
+    font-size: 26px;
+    color: #2d6a4f;
+}
+
+button:last-of-type{
+    width: 170px;
+    height: 55px;
+    border-radius: 12px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+button:last-of-type:hover{
+    background: #e63946;
+}
