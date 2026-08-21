@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+      let age = 21;
+      function printAge()
+      {
+         console.log (`your age is ${age}`);
+      }
+       
+      printAge();
+
+      age = 76;
+      printAge();
+      age=1;
+      printAge();
+        // Random number generate karne ke liye function banaya
+function generateRandomMove()
+{
+    // Math.random() 0 se lekar 1 ke beech random decimal number deta hai
+    let random = Math.random();
+
+    // Random number ko 3 se multiply kiya
+    // Ab value 0 se 3 ke beech aa jayegi
+    let randomMove = random * 3;
+
+    // Jo value bani hai usko function ke bahar return kar diya
+    return randomMove;
+}
+
+// Function ko call kiya aur jo value return hui usse randomMove variable me store kar diya
+let randomMove = generateRandomMove();
+
+// Variable me store hui value print hogi
+console.log(randomMove);
+
+// Har baar function dubara call hoga aur nayi random value generate hogi
+console.log(generateRandomMove());
+console.log(generateRandomMove());
+console.log(generateRandomMove());
+console.log(generateRandomMove());
+console.log(generateRandomMove());
+console.log(generateRandomMove());
+
+function determineDrivestatus (
+    {
+        let age =21;
+
+        if ( age > 18 )
+    { status= 'you can drive '}
+    }
+    else 
+    {
+        status= 'go with bycycle'    }{}
+        return status;
+
+
+              function sum (a,b){
+              let sum = a+b;
+              return sum;}
+
+              console.log(sum(4,8));
+
+
+              function greeting(name = 'lalaram')
+              {
+                console.log(`namaste ${name} uncle`);
+              }
+               
+               greeting(ram);
+     console.log(determineDrivestatus())
+    </script>
+</body>
+</html>

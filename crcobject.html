@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bat Ball Stump Game</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Bat Ball Stump Game</h1>
+
+    <button onclick="
+        computerChoice();
+        result('Bat');
+   alert(`
+You chose Bat.
+Computer chose ${computerchoice}.
+
+${resultMsg}
+
+Score
+Win : ${score.win}
+Lost : ${score.lost}
+Tie : ${score.tie}
+`);">
+        Bat
+    </button>
+
+    <button onclick="
+        computerChoice();
+        result('Ball');
+        
+  alert(`
+You chose ball.
+Computer chose ${computerchoice}.
+
+${resultMsg}
+
+Score
+Win : ${score.win}
+Lost : ${score.lost}
+Tie : ${score.tie}
+`);">
+        Ball
+    </button>
+
+    <button onclick="
+        computerChoice();
+        result('Stump');
+  alert(`
+You chose stump.
+Computer chose ${computerchoice}.
+
+${resultMsg}
+
+Score
+Win : ${score.win}
+Lost : ${score.lost}
+Tie : ${score.tie}
+`);">
+        Stump
+    </button>
+
+<h3 id="usermove"></h3>
+<h3 id="computer-move"></h3>
+<h3 id="result"></h3>
+<h3 id="score"></h3>
+
+    <script>
+
+        let score =
+        {
+            win: 0,
+            lost: 0,
+            tie: 0,
+        }
+
+        // Computer ki choice store hogi
+        let computerchoice;
+
+        // Result store hoga
+        let resultMsg;
+
+        // Computer random choice karega
+        function computerChoice() {
+
+            let randomNumber = Math.random() * 3;
+
+            if (randomNumber > 0 && randomNumber <= 1) {
+                computerchoice = 'Bat';
+            }
+            else if (randomNumber > 1 && randomNumber <= 2) {
+                computerchoice = 'Ball';
+            }
+            else {
+                computerchoice = 'Stump';
+            }
+        }
+
+        // Result decide karega
+        function result(userChoice) {
+
+            if (userChoice === 'Bat') {
+
+                if (computerchoice === 'Bat') {
+                    score.tie++;
+                    resultMsg = 'It is a tie.';
+                }
+                else if (computerchoice === 'Ball') {
+                    score.win++;
+                    resultMsg = 'User won.';
+                }
+                else {
+                    score.lost++;
+                    resultMsg = 'Computer won.';
+                }
+
+                console.log(
+                    `Score -> Win: ${score.win}, Lost: ${score.lost}, Tie: ${score.tie}`
+                );
+            }
+
+            else if (userChoice === 'Ball') {
+
+                if (computerchoice === 'Ball') {
+                    score.tie++;
+                    resultMsg = 'It is a tie.';
+                }
+                else if (computerchoice === 'Stump') {
+                    score.win++;
+                    resultMsg = 'User won.';
+                }
+                else {
+                    score.lost++;
+                    resultMsg = 'Computer won.';
+                }
+
+                console.log(
+                    `Score -> Win: ${score.win}, Lost: ${score.lost}, Tie: ${score.tie}`
+                );
+            }
+
+            else if (userChoice === 'Stump') {
+
+                if (computerchoice === 'Stump') {
+                    score.tie++;
+                    resultMsg = 'It is a tie.';
+                }
+                else if (computerchoice === 'Bat') {
+                    score.win++;
+                    resultMsg = 'User won.';
+                }
+                else {
+                    score.lost++;
+                    resultMsg = 'Computer won.';
+                }
+
+                console.log(
+                    `Score -> Win: ${score.win}, Lost: ${score.lost}, Tie: ${score.tie}`
+                );
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+        
+
+

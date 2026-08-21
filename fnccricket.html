@@ -1,0 +1,116 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bat Ball Stump Game</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Bat Ball Stump Game</h1>
+
+    <button onclick="
+        computerChoice();
+        result('Bat');
+        alert(`You have chosen Bat. Computer choice is ${computerchoice}. ${resultMsg}`);
+    ">
+        Bat
+    </button>
+
+    <button onclick="
+        computerChoice();
+        result('Ball');
+        alert(`You have chosen Ball. Computer choice is ${computerchoice}. ${resultMsg}`);
+    ">
+        Ball
+    </button>
+
+    <button onclick="
+        computerChoice();
+        result('Stump');
+        alert(`You have chosen Stump. Computer choice is ${computerchoice}. ${resultMsg}`);
+    ">
+        Stump
+    </button>
+
+    <script>
+
+        // Computer ki choice store hogi
+        let computerchoice;
+
+        // Result store hoga
+        let resultMsg;
+
+        // Computer random choice karega
+        function computerChoice() {
+
+            let randomNumber = Math.random() * 3;
+
+            if (randomNumber > 0 && randomNumber <= 1) {
+                computerchoice = 'Bat';
+            }
+            else if (randomNumber > 1 && randomNumber <= 2) {
+                computerchoice = 'Ball';
+            }
+            else {
+                computerchoice = 'Stump';
+            }
+        }
+
+        // Result decide karega
+        function result(userChoice) {
+
+            if (userChoice === 'Bat') {
+
+                if (computerchoice === 'Bat') {
+                    resultMsg = 'It is a tie.';
+                }
+                else if (computerchoice === 'Ball') {
+                    resultMsg = 'User won.';
+                }
+                else {
+                    resultMsg = 'Computer won.';
+                }
+
+            }
+
+            else if (userChoice === 'Ball') {
+
+                if (computerchoice === 'Ball') {
+                    resultMsg = 'It is a tie.';
+                }
+                else if (computerchoice === 'Stump') {
+                    resultMsg = 'User won.';
+                }
+                else {
+                    resultMsg = 'Computer won.';
+                }
+
+            }
+
+            else if (userChoice === 'Stump') {
+
+                if (computerchoice === 'Stump') {
+                    resultMsg = 'It is a tie.';
+                }
+                else if (computerchoice === 'Bat') {
+                    resultMsg = 'User won.';
+                }
+                else {
+                    resultMsg = 'Computer won.';
+                }
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
